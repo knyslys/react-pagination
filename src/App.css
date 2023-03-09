@@ -1,0 +1,36 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #fff;
+  gap: 2rem;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #fff;
+  color: black;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.message-container h1 {
+  background-color: blueviolet;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.message-container p {
+  padding: 0.5rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 0.5rem;
+}
