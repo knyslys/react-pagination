@@ -4,15 +4,13 @@ const pagesPerPage = 5;
 
 const Comments = (props) => {
   const isFetchCompleted = localStorage.getItem("isFetchCompleted");
-  const [comments, setComments] = useState();
+
   useEffect(() => {
     if (isFetchCompleted !== "1") {
       fetch("https://jsonplaceholder.typicode.com/posts").then((response) =>
         response.json().then((data) => {
           localStorage.setItem("localSavesMessages", JSON.stringify(data));
           localStorage.setItem("isFetchCompleted", "1");
-          props.isLoaded(true);
-          setComments(data);
         })
       );
     }
@@ -134,7 +132,7 @@ const Pagination = (props) => {
 
 function App() {
   const [page, setPage] = useState(1);
-  const [isLoaded, setIsLoaded] = useState();
+
   return (
     <div className="App">
       {localStorage.getItem("isFetchCompleted") === "1" ? (
@@ -148,12 +146,7 @@ function App() {
         ""
       )}
 
-      <Comments
-        page={page}
-        isLoaded={(status) => {
-          setIsLoaded(status);
-        }}
-      />
+      <Comments page={page} />
     </div>
   );
 }
